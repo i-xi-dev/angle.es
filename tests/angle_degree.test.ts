@@ -24,7 +24,10 @@ Deno.test("Angle.Degrees.fromRadians()", () => {
   assertStrictEquals(Angle.Degrees.fromRadians(Math.PI * 2), 0);
   assertStrictEquals(Angle.Degrees.fromRadians(Math.PI), 180);
   assertStrictEquals(Angle.Degrees.fromRadians(Math.PI / 2), 90);
-  assertStrictEquals(Angle.Degrees.fromRadians((Math.PI * 2) + (Math.PI / 2)), 90);
+  assertStrictEquals(
+    Angle.Degrees.fromRadians((Math.PI * 2) + (Math.PI / 2)),
+    90,
+  );
 
   assertThrows(
     () => {
@@ -40,8 +43,8 @@ Deno.test("Angle.Degrees.toRadians()", () => {
   assertStrictEquals(Angle.Degrees.toRadians(0), 0);
   assertStrictEquals(Angle.Degrees.toRadians(360), 0);
   assertStrictEquals(Angle.Degrees.toRadians(180), Math.PI);
-  assertStrictEquals(Angle.Degrees.toRadians(90), (Math.PI / 2));
-  assertStrictEquals(Angle.Degrees.toRadians(450), (Math.PI / 2));
+  assertStrictEquals(Angle.Degrees.toRadians(90), Math.PI / 2);
+  assertStrictEquals(Angle.Degrees.toRadians(450), Math.PI / 2);
 
   assertThrows(
     () => {
