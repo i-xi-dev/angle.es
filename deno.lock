@@ -28,6 +28,11 @@
     "https://deno.land/std@0.198.0/assert/mod.ts": "08d55a652c22c5da0215054b21085cec25a5da47ce4a6f9de7d9ad36df35bdee",
     "https://deno.land/std@0.198.0/assert/unimplemented.ts": "d56fbeecb1f108331a380f72e3e010a1f161baa6956fd0f7cf3e095ae1a4c75a",
     "https://deno.land/std@0.198.0/assert/unreachable.ts": "4600dc0baf7d9c15a7f7d234f00c23bca8f3eba8b140286aaca7aa998cf9a536",
-    "https://deno.land/std@0.198.0/fmt/colors.ts": "a7eecffdf3d1d54db890723b303847b6e0a1ab4b528ba6958b8f2e754cf1b3bc"
+    "https://deno.land/std@0.198.0/fmt/colors.ts": "a7eecffdf3d1d54db890723b303847b6e0a1ab4b528ba6958b8f2e754cf1b3bc",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/mod.ts": "b0d0b3c0601a820c2e35c8f7286f9bbf3ca3db143bb63eddab910f82c8834f03",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/int.ts": "5c382bf47539b7b8677ac584fc1961ef7930fc682d69c51346b0da2659b8fd69",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/number.ts": "60662ea6440afda8b4de2403fa62c1383e27cda1324706c1a3b565a95673101c",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/uint6.ts": "75ca9ed960d06008cfc957fbac8ffa86ebb3483b9ae868db3f7fc99d9d21ec49",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/uint8.ts": "9319afe85361942a8ce7dfdd7dda69123220057177b107bfd2b627c3a3202502"
   }
 }

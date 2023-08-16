@@ -1,3 +1,5 @@
+import { Integer, NumberUtils } from "../deps.ts";
+
 class Angle {
   #degrees: Angle.Degrees;
 
@@ -56,9 +58,91 @@ namespace Angle {
       }
       throw new TypeError("degrees");
     }
+
+    export function toDmsString(
+      degrees: Degrees,
+      options?: DmsOptions,
+    ): string {
+      if (Number.isFinite(degrees) !== true) {
+        throw new TypeError("degrees");
+      }
+
+      const precision = Object.values(DmsOptions.Precision).includes(
+          options?.precision as DmsOptions.Precision,
+        )
+        ? options?.precision
+        : DmsOptions.Precision.SECOND;
+      const normalizedDegrees = normalize(degrees);
+      const dInt = Math.trunc(normalizedDegrees);
+
+      let dStr: string;
+      if (
+        (precision === DmsOptions.Precision.DEGREE) ||
+        ((precision === DmsOptions.Precision.AUTO) &&
+          (dInt === normalizedDegrees))
+      ) {
+        dStr = Math.round(normalizedDegrees).toString(10);
+        return `${dStr}°`;
+      } else {
+        dStr = dInt.toString(10);
+      }
+
+      const msNum = (normalizedDegrees - dInt) * 60;
+      const mInt = Math.trunc(msNum);
+
+      let mStr: string;
+      if (
+        (precision === DmsOptions.Precision.MINUTE) ||
+        ((precision === DmsOptions.Precision.AUTO) && (mInt === msNum))
+      ) {
+        mStr = Math.round(msNum).toString(10).padStart(2, "0");
+        return `${dStr}°${mStr}′`;
+      } else {
+        mStr = mInt.toString(10).padStart(2, "0");
+      }
+
+      const sNum = (msNum - mInt) * 60;
+      const sInt = Math.trunc(sNum);
+
+      let secondFractionDigits = 0;
+      if (Integer.isNonNegativeInteger(options?.secondFractionDigits)) {
+        secondFractionDigits = NumberUtils.clamp(
+          options?.secondFractionDigits as number,
+          0,
+          6,
+        );
+      }
+
+      const sStr = ((sInt < 10) ? "0" : "") +
+        sNum.toFixed(secondFractionDigits);
+      return `${dStr}°${mStr}′${sStr}″`;
+    }
+
+    export type DmsOptions = {
+      precision?: DmsOptions.Precision;
+      secondFractionDigits?: DmsOptions.SecondFractionDigits;
+    };
+
+    export namespace DmsOptions {
+      export const Precision = {
+        AUTO: "auto",
+        DEGREE: "degree",
+        MINUTE: "minute",
+        SECOND: "second",
+      } as const;
+      export type Precision = typeof Precision[keyof typeof Precision];
+
+      export type SecondFractionDigits = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+    }
   }
 
   export type Radians = number;
+
+  // export namespace Radians {
+  //   export function format(radians: Radians): string {
+  //     return `${ radians } rad`; 桁区切りはSI単位としては","でなく" "。→ 基本的には" rad"を後置すればいいだけなので実装しない
+  //   }
+  // }
 }
 
 export { Angle };
