@@ -52,7 +52,7 @@ namespace Angle {
 
     export function toRadians(degrees: Degrees): Radians {
       if (Number.isFinite(degrees)) {
-        return normalize(360) * (Math.PI / 180);
+        return normalize(degrees) * (Math.PI / 180);
       }
       throw new TypeError("degrees");
     }
