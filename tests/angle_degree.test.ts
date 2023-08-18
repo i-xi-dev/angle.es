@@ -156,7 +156,10 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
 
   const o3cx = { secondFractionDigits: 1 } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o3cx), "0°00′00.0″");
-  assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o3cx), "90°00′00.0″");
+  assertStrictEquals(
+    Angle.Degrees.toDmsString(1234567890, o3cx),
+    "90°00′00.0″",
+  );
   assertStrictEquals(Angle.Degrees.toDmsString(0.1, o3cx), "0°06′00.0″");
   assertStrictEquals(Angle.Degrees.toDmsString(0.5, o3cx), "0°30′00.0″");
   assertStrictEquals(Angle.Degrees.toDmsString(0.9, o3cx), "0°54′00.0″");

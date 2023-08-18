@@ -29,10 +29,12 @@
     "https://deno.land/std@0.198.0/assert/unimplemented.ts": "d56fbeecb1f108331a380f72e3e010a1f161baa6956fd0f7cf3e095ae1a4c75a",
     "https://deno.land/std@0.198.0/assert/unreachable.ts": "4600dc0baf7d9c15a7f7d234f00c23bca8f3eba8b140286aaca7aa998cf9a536",
     "https://deno.land/std@0.198.0/fmt/colors.ts": "a7eecffdf3d1d54db890723b303847b6e0a1ab4b528ba6958b8f2e754cf1b3bc",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/mod.ts": "b0d0b3c0601a820c2e35c8f7286f9bbf3ca3db143bb63eddab910f82c8834f03",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/int.ts": "5c382bf47539b7b8677ac584fc1961ef7930fc682d69c51346b0da2659b8fd69",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/number.ts": "60662ea6440afda8b4de2403fa62c1383e27cda1324706c1a3b565a95673101c",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/uint6.ts": "75ca9ed960d06008cfc957fbac8ffa86ebb3483b9ae868db3f7fc99d9d21ec49",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/1.0.0/src/uint8.ts": "9319afe85361942a8ce7dfdd7dda69123220057177b107bfd2b627c3a3202502"
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/2.0.0/mod.ts": "c5ce2ee6830d305193012b47b4716b66cd4b99680774bdc0fac149ee98a8487a",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/2.0.0/src/integer.ts": "13b3bbd54397cf9d44f5c319e06e7c5dc36c2ea886b617ab680b2b650e123ddb",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/2.0.0/src/non_negative_integer.ts": "ecf46ec41566d7ccf09528048c7cb247064575d7db0da27a56489ec3bf5e86de",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/2.0.0/src/number.ts": "229475e840fce5f92e7a0d0ec20c0d2a9747675402b2c55896bd2838b49ea462",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/2.0.0/src/positive_integer.ts": "660693f5267eb6e3cecb6ce7f8ff3000ab459b8380af5d22c33076c8380e197b",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/2.0.0/src/uint6.ts": "690dedd90eb2d5f33dd5b7117607d7c17910a45985682b7f8531b046b726581d",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/2.0.0/src/uint8.ts": "ab5f6b08c9e1f9e260ab32947370a4f22c1435e714fc6dc13fcdb98786a3fdbf"
   }
 }

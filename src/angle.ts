@@ -1,4 +1,4 @@
-import { Integer, NumberUtils } from "../deps.ts";
+import { NonNegativeInteger } from "../deps.ts";
 
 class Angle {
   #degrees: Angle.Degrees;
@@ -104,14 +104,15 @@ namespace Angle {
       const sNum = (msNum - mInt) * 60;
       const sInt = Math.trunc(sNum);
 
-      let secondFractionDigits = 0;
-      if (Integer.isNonNegativeInteger(options?.secondFractionDigits)) {
-        secondFractionDigits = NumberUtils.clamp(
-          options?.secondFractionDigits as number,
-          0,
-          6,
-        );
-      }
+      const secondFractionDigits = NonNegativeInteger.clamp(
+        options?.secondFractionDigits ?? 0,
+        {
+          fallback: 0,
+          method: "trunc",
+          lowerLimit: 0,
+          upperLimit: 6,
+        },
+      );
 
       const sStr = ((sInt < 10) ? "0" : "") +
         sNum.toFixed(secondFractionDigits);
