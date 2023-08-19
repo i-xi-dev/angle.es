@@ -105,7 +105,7 @@ namespace Angle {
       const sInt = Math.trunc(sNum);
 
       const secondFractionDigits = NonNegativeInteger.clamp(
-        options?.secondFractionDigits ?? 0,
+        options?.secondFractionDigits,
         {
           fallback: 0,
           method: "trunc",
