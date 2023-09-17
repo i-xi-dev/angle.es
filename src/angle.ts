@@ -59,6 +59,22 @@ namespace Angle {
       throw new TypeError("degrees");
     }
 
+    export function fromGradians(gradians: Gradians): Degrees {
+      if (Number.isFinite(gradians)) {
+        const degrees = gradians * (180 / 200);
+        return normalize(degrees);
+      }
+      throw new TypeError("gradians");
+    }
+
+    export function fromTurns(turns: Turns): Degrees {
+      if (Number.isFinite(turns)) {
+        const degrees = turns * 360;
+        return normalize(degrees);
+      }
+      throw new TypeError("turns");
+    }
+
     export function toDmsString(
       degrees: Degrees,
       options?: DmsOptions,
@@ -144,6 +160,10 @@ namespace Angle {
   //     return `${ radians } rad`; 桁区切りはSI単位としては","でなく" "。→ 基本的には" rad"を後置すればいいだけなので実装しない
   //   }
   // }
+
+  export type Gradians = number;
+
+  export type Turns = number;
 }
 
 export { Angle };

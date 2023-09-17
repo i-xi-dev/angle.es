@@ -190,3 +190,43 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
   assertStrictEquals(Angle.Degrees.toDmsString(1.23456, o3e), "1°");
   assertStrictEquals(Angle.Degrees.toDmsString(6.8563, o3e), "7°");
 });
+
+Deno.test("Angle.Degrees.fromGradians()", () => {
+  assertStrictEquals(Angle.Degrees.fromGradians(0), 0);
+  assertStrictEquals(Angle.Degrees.fromGradians(400), 0);
+  assertStrictEquals(Angle.Degrees.fromGradians(200), 180);
+  assertStrictEquals(Angle.Degrees.fromGradians(100), 90);
+  assertStrictEquals(
+    Angle.Degrees.fromGradians(400 + 100),
+    90,
+  );
+
+  assertThrows(
+    () => {
+      Angle.Degrees.fromGradians("0" as unknown as number);
+    },
+    TypeError,
+    undefined,
+    "radians",
+  );
+});
+
+Deno.test("Angle.Degrees.fromTurns()", () => {
+  assertStrictEquals(Angle.Degrees.fromTurns(0), 0);
+  assertStrictEquals(Angle.Degrees.fromTurns(1), 0);
+  assertStrictEquals(Angle.Degrees.fromTurns(0.5), 180);
+  assertStrictEquals(Angle.Degrees.fromTurns(0.25), 90);
+  assertStrictEquals(
+    Angle.Degrees.fromTurns(1 + 0.25),
+    90,
+  );
+
+  assertThrows(
+    () => {
+      Angle.Degrees.fromTurns("0" as unknown as number);
+    },
+    TypeError,
+    undefined,
+    "radians",
+  );
+});
