@@ -1,4 +1,4 @@
-import { NonNegativeInteger } from "../deps.ts";
+import { SafeInteger } from "../deps.ts";
 
 class Angle {
   #degrees: Angle.Degrees;
@@ -120,11 +120,11 @@ namespace Angle {
       const sNum = (msNum - mInt) * 60;
       const sInt = Math.trunc(sNum);
 
-      const secondFractionDigits = NonNegativeInteger.from(
+      const secondFractionDigits = SafeInteger.fromNumber(
         options?.secondFractionDigits,
         {
           fallback: 0,
-          method: "trunc",
+          roundingMode: SafeInteger.RoundingMode.TRUNCATE,
           lowerLimit: 0,
           upperLimit: 6,
         },
