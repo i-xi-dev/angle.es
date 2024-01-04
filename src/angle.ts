@@ -1,4 +1,4 @@
-import { SafeInteger } from "../deps.ts";
+import { RoundingMode, SafeInteger } from "../deps.ts";
 
 class Angle {
   #degrees: Angle.Degrees;
@@ -124,9 +124,8 @@ namespace Angle {
         options?.secondFractionDigits,
         {
           fallback: 0,
-          roundingMode: SafeInteger.RoundingMode.TRUNCATE,
-          lowerLimit: 0,
-          upperLimit: 6,
+          roundingMode: RoundingMode.TRUNCATE,
+          clampRange: [0, 6],
         },
       );
 
