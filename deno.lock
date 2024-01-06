@@ -33,14 +33,14 @@
     "https://deno.land/std@0.210.0/assert/unimplemented.ts": "4e3e504792c87c485dbc5f4020489d8806ef697741403af2008dfa7b5a4711e8",
     "https://deno.land/std@0.210.0/assert/unreachable.ts": "1af8c99421cc5fb7332454b2b9eca074a4e394895a180bc837750dedcca75338",
     "https://deno.land/std@0.210.0/fmt/colors.ts": "2685c524bef9b16b3059a417daf6860c754eb755e19e812762ef5dff62f24481",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/mod.ts": "efb9b6547929f73272e84b68068d9f57553f27a86a92a28d06eb383bc3ed13d1",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/main.ts": "5cbd2925ec0e1e1d09e49c5752100f6f41d84db341b019d30c4b84cafecf886a",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/rounding_mode.ts": "f5e90afbbdf9e85b2d5d5b076f416ad6014cd3f7ff5d5f59927e2fe548a0926e",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/safe_integer.ts": "7625838c90b92e098c44b07c09ef7b244e91efdd91525f0b19e286a919b9068b",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/uint16.ts": "0f3e0469ea4216d32f680e8216640516be83ca785dfe8ec2ed9352b5023bc33c",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/uint32.ts": "fa18efa88fe962c25f476a8fa612c4332c006ad9c5a30f5a4e30f5d521665029",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/uint6.ts": "beef65810c717d3a9f097e279407fbeb2ed06e6da23915f776d31c897cb32d6b",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/uint7.ts": "2132a925677234c9ca3ce017d76092dca1cb490a1acefe73539f55763506c7fc",
-    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.0/src/uint8.ts": "4b9617d162fa361b9e909424c35249c6fd873828cdf7b10cbe60300e25156ecf"
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/mod.ts": "efb9b6547929f73272e84b68068d9f57553f27a86a92a28d06eb383bc3ed13d1",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/main.ts": "5cbd2925ec0e1e1d09e49c5752100f6f41d84db341b019d30c4b84cafecf886a",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/rounding_mode.ts": "f5e90afbbdf9e85b2d5d5b076f416ad6014cd3f7ff5d5f59927e2fe548a0926e",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/safe_integer.ts": "7625838c90b92e098c44b07c09ef7b244e91efdd91525f0b19e286a919b9068b",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/uint16.ts": "0f3e0469ea4216d32f680e8216640516be83ca785dfe8ec2ed9352b5023bc33c",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/uint32.ts": "9baa6f622817ce19f00dba413a6c4ca250cce5739ccf8bcd6fa3a7256eb7a4b4",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/uint6.ts": "beef65810c717d3a9f097e279407fbeb2ed06e6da23915f776d31c897cb32d6b",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/uint7.ts": "2132a925677234c9ca3ce017d76092dca1cb490a1acefe73539f55763506c7fc",
+    "https://raw.githubusercontent.com/i-xi-dev/number.es/5.4.1/src/uint8.ts": "4b9617d162fa361b9e909424c35249c6fd873828cdf7b10cbe60300e25156ecf"
   }
 }
