@@ -83,18 +83,18 @@ namespace Angle {
         throw new TypeError("degrees");
       }
 
-      const pattern = Object.values(DmsOptions.Pattern).includes(
-          options?.pattern as DmsOptions.Pattern,
+      const precision = Object.values(DmsOptions.Precision).includes(
+          options?.precision as DmsOptions.Precision,
         )
-        ? options?.pattern
-        : DmsOptions.Pattern.SECOND;
+        ? options?.precision
+        : DmsOptions.Precision.SECOND;
       const normalizedDegrees = normalize(degrees);
       const dInt = Math.trunc(normalizedDegrees);
 
       let dStr: string;
       if (
-        (pattern === DmsOptions.Pattern.DEGREE) ||
-        ((pattern === DmsOptions.Pattern.AUTO) &&
+        (precision === DmsOptions.Precision.DEGREE) ||
+        ((precision === DmsOptions.Precision.AUTO) &&
           (dInt === normalizedDegrees))
       ) {
         dStr = Math.round(normalizedDegrees).toString(10);
@@ -108,8 +108,8 @@ namespace Angle {
 
       let mStr: string;
       if (
-        (pattern === DmsOptions.Pattern.MINUTE) ||
-        ((pattern === DmsOptions.Pattern.AUTO) && (mInt === msNum))
+        (precision === DmsOptions.Precision.MINUTE) ||
+        ((precision === DmsOptions.Precision.AUTO) && (mInt === msNum))
       ) {
         mStr = Math.round(msNum).toString(10).padStart(2, "0");
         return `${dStr}°${mStr}′`;
@@ -135,18 +135,20 @@ namespace Angle {
     }
 
     export type DmsOptions = {
-      pattern?: DmsOptions.Pattern;
+      precision?: DmsOptions.Precision;
       secondFractionDigits?: DmsOptions.SecondFractionDigits;
     };
 
     export namespace DmsOptions {
-      export const Pattern = {
+      export const Precision = {
         AUTO: "auto",
         DEGREE: "degree",
         MINUTE: "minute",
         SECOND: "second",
+        // MILLISECOND → SecondFractionDigits:3
+        // MICROSECOND → SecondFractionDigits:6
       } as const;
-      export type Pattern = typeof Pattern[keyof typeof Pattern];
+      export type Precision = typeof Precision[keyof typeof Precision];
 
       export type SecondFractionDigits = 0 | 1 | 2 | 3 | 4 | 5 | 6;
     }
