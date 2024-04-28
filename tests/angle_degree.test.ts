@@ -82,7 +82,7 @@ Deno.test("Angle.Degrees.toDmsString(number)", () => {
 });
 
 Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
-  const o1 = { secondFractionDigits: 0, precision: "auto" } as const;
+  const o1 = { secondFractionDigits: 0, pattern: "auto" } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o1), "0°");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o1), "90°");
   assertStrictEquals(Angle.Degrees.toDmsString(0.1, o1), "0°06′");
@@ -95,7 +95,7 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
 
   const o2 = {
     secondFractionDigits: 10 as Angle.Degrees.DmsOptions.SecondFractionDigits,
-    precision: "auto",
+    pattern: "auto",
   } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o2), "0°");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o2), "90°");
@@ -107,7 +107,7 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
   assertStrictEquals(Angle.Degrees.toDmsString(1.23456, o2), "1°14′04.416000″");
   assertStrictEquals(Angle.Degrees.toDmsString(6.8563, o2), "6°51′22.680000″");
 
-  const o3 = { secondFractionDigits: 1, precision: "auto" } as const;
+  const o3 = { secondFractionDigits: 1, pattern: "auto" } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o3), "0°");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o3), "90°");
   assertStrictEquals(Angle.Degrees.toDmsString(0.1, o3), "0°06′");
@@ -120,7 +120,7 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
 
   const o3x = {
     secondFractionDigits: 1,
-    precision: "" as Angle.Degrees.DmsOptions.Precision,
+    pattern: "" as Angle.Degrees.DmsOptions.Pattern,
   } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o3x), "0°00′00.0″");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o3x), "90°00′00.0″");
@@ -132,7 +132,7 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
   assertStrictEquals(Angle.Degrees.toDmsString(1.23456, o3x), "1°14′04.4″");
   assertStrictEquals(Angle.Degrees.toDmsString(6.8563, o3x), "6°51′22.7″");
 
-  const o3b = { secondFractionDigits: 1, precision: "auto" } as const;
+  const o3b = { secondFractionDigits: 1, pattern: "auto" } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o3b), "0°");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o3b), "90°");
   assertStrictEquals(Angle.Degrees.toDmsString(0.1, o3b), "0°06′");
@@ -143,7 +143,7 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
   assertStrictEquals(Angle.Degrees.toDmsString(1.23456, o3b), "1°14′04.4″");
   assertStrictEquals(Angle.Degrees.toDmsString(6.8563, o3b), "6°51′22.7″");
 
-  const o3c = { secondFractionDigits: 1, precision: "second" } as const;
+  const o3c = { secondFractionDigits: 1, pattern: "second" } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o3c), "0°00′00.0″");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o3c), "90°00′00.0″");
   assertStrictEquals(Angle.Degrees.toDmsString(0.1, o3c), "0°06′00.0″");
@@ -168,7 +168,7 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
   assertStrictEquals(Angle.Degrees.toDmsString(1.23456, o3cx), "1°14′04.4″");
   assertStrictEquals(Angle.Degrees.toDmsString(6.8563, o3cx), "6°51′22.7″");
 
-  const o3d = { secondFractionDigits: 1, precision: "minute" } as const;
+  const o3d = { secondFractionDigits: 1, pattern: "minute" } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o3d), "0°00′");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o3d), "90°00′");
   assertStrictEquals(Angle.Degrees.toDmsString(0.1, o3d), "0°06′");
@@ -179,7 +179,7 @@ Deno.test("Angle.Degrees.toDmsString(number, {})", () => {
   assertStrictEquals(Angle.Degrees.toDmsString(1.23456, o3d), "1°14′");
   assertStrictEquals(Angle.Degrees.toDmsString(6.8563, o3d), "6°51′");
 
-  const o3e = { secondFractionDigits: 1, precision: "degree" } as const;
+  const o3e = { secondFractionDigits: 1, pattern: "degree" } as const;
   assertStrictEquals(Angle.Degrees.toDmsString(0, o3e), "0°");
   assertStrictEquals(Angle.Degrees.toDmsString(1234567890, o3e), "90°");
   assertStrictEquals(Angle.Degrees.toDmsString(0.1, o3e), "0°");

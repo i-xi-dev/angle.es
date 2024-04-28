@@ -83,18 +83,18 @@ namespace Angle {
         throw new TypeError("degrees");
       }
 
-      const precision = Object.values(DmsOptions.Precision).includes(
-          options?.precision as DmsOptions.Precision,
+      const pattern = Object.values(DmsOptions.Pattern).includes(
+          options?.pattern as DmsOptions.Pattern,
         )
-        ? options?.precision
-        : DmsOptions.Precision.SECOND;
+        ? options?.pattern
+        : DmsOptions.Pattern.SECOND;
       const normalizedDegrees = normalize(degrees);
       const dInt = Math.trunc(normalizedDegrees);
 
       let dStr: string;
       if (
-        (precision === DmsOptions.Precision.DEGREE) ||
-        ((precision === DmsOptions.Precision.AUTO) &&
+        (pattern === DmsOptions.Pattern.DEGREE) ||
+        ((pattern === DmsOptions.Pattern.AUTO) &&
           (dInt === normalizedDegrees))
       ) {
         dStr = Math.round(normalizedDegrees).toString(10);
@@ -108,8 +108,8 @@ namespace Angle {
 
       let mStr: string;
       if (
-        (precision === DmsOptions.Precision.MINUTE) ||
-        ((precision === DmsOptions.Precision.AUTO) && (mInt === msNum))
+        (pattern === DmsOptions.Pattern.MINUTE) ||
+        ((pattern === DmsOptions.Pattern.AUTO) && (mInt === msNum))
       ) {
         mStr = Math.round(msNum).toString(10).padStart(2, "0");
         return `${dStr}°${mStr}′`;
@@ -135,18 +135,18 @@ namespace Angle {
     }
 
     export type DmsOptions = {
-      precision?: DmsOptions.Precision;
+      pattern?: DmsOptions.Pattern;
       secondFractionDigits?: DmsOptions.SecondFractionDigits;
     };
 
     export namespace DmsOptions {
-      export const Precision = {
+      export const Pattern = {
         AUTO: "auto",
         DEGREE: "degree",
         MINUTE: "minute",
         SECOND: "second",
       } as const;
-      export type Precision = typeof Precision[keyof typeof Precision];
+      export type Pattern = typeof Pattern[keyof typeof Pattern];
 
       export type SecondFractionDigits = 0 | 1 | 2 | 3 | 4 | 5 | 6;
     }
