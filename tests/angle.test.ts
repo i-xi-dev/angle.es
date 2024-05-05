@@ -49,6 +49,14 @@ Deno.test("Angle.prototype.toRadians()", () => {
   assertStrictEquals(Angle.ofDegrees(450).toRadians(), Math.PI / 2);
 });
 
+Deno.test("Angle.prototype.toDmsString()", () => {
+  const o3x = {
+    secondFractionDigits: 1,
+    precision: "" as Angle.DmsStringPrecision,
+  } as const;
+  assertStrictEquals(Angle.ofDegrees(0).toDmsString(o3x), "0°00′00.0″");
+});
+
 Deno.test("Angle.prototype.valueOf()", () => {
   assertStrictEquals(Angle.ofDegrees(0).valueOf(), 0);
   assertStrictEquals(Angle.ofDegrees(360).valueOf(), 0);
