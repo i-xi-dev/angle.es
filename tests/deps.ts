@@ -1,4 +1,1 @@
-export {
-  assertStrictEquals,
-  assertThrows,
-} from "https://deno.land/std@0.224.0/assert/mod.ts";
+export { assertStrictEquals, assertThrows } from "jsr:@std/assert@1.0.6";

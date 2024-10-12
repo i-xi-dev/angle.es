@@ -1,4 +1,4 @@
-import { RoundingMode, SafeInteger } from "../deps.ts";
+import { Integer, SafeIntegerRange } from "../deps.ts";
 
 export class Angle {
   #degrees: Angle.Degrees;
@@ -103,6 +103,16 @@ export namespace Angle {
 
   export type DmsStringSecondFractionDigits = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
+  function _resolveDmsStringSecondFractionDigits(value?: number) {
+    let adjustedValue = Number.isFinite(value) ? value as number : 0;
+    adjustedValue = Integer.roundNumber(
+      adjustedValue,
+      Integer.RoundingMode.TRUNCATE,
+    );
+    const range = SafeIntegerRange.of<DmsStringSecondFractionDigits>(0, 6);
+    return range.clamp(adjustedValue);
+  }
+
   export type DmsOptions = {
     precision?: DmsStringPrecision;
     secondFractionDigits?: DmsStringSecondFractionDigits;
@@ -153,13 +163,8 @@ export namespace Angle {
     const sNum = (msNum - mInt) * 60;
     const sInt = Math.trunc(sNum);
 
-    const secondFractionDigits = SafeInteger.fromNumber(
+    const secondFractionDigits = _resolveDmsStringSecondFractionDigits(
       options?.secondFractionDigits,
-      {
-        fallback: 0,
-        roundingMode: RoundingMode.TRUNCATE,
-        clampRange: [0, 6],
-      },
     );
 
     const sStr = ((sInt < 10) ? "0" : "") +
