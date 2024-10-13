@@ -103,7 +103,9 @@ export namespace Angle {
 
   export type DmsStringSecondFractionDigits = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-  function _resolveDmsStringSecondFractionDigits(value?: number): DmsStringSecondFractionDigits {
+  function _resolveDmsStringSecondFractionDigits(
+    value?: number,
+  ): DmsStringSecondFractionDigits {
     let adjustedValue = Number.isFinite(value) ? value as number : 0;
     adjustedValue = Integer.roundNumber(
       adjustedValue,
