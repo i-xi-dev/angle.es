@@ -1,4 +1,4 @@
-import { Integer, SafeIntegerRange } from "../deps.ts";
+import { Integer, SafeInteger } from "../deps.ts";
 
 export class Angle {
   #degrees: Angle.Degrees;
@@ -111,8 +111,11 @@ export namespace Angle {
       adjustedValue,
       Integer.RoundingMode.TRUNCATE,
     );
-    const range = SafeIntegerRange.of<DmsStringSecondFractionDigits>(0, 6);
-    return range.clamp(adjustedValue);
+    return SafeInteger.clamp<DmsStringSecondFractionDigits>(
+      adjustedValue,
+      0,
+      6,
+    );
   }
 
   export type DmsOptions = {
