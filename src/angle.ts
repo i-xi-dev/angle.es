@@ -1,4 +1,4 @@
-import { Integer, SafeInteger } from "../deps.ts";
+import { NumberType, Numerics, SafeIntegerType } from "../deps.ts";
 
 export class Angle {
   #degrees: Angle.Degrees;
@@ -107,11 +107,11 @@ export namespace Angle {
     value?: number,
   ): DmsStringSecondFractionDigits {
     let adjustedValue = Number.isFinite(value) ? value as number : 0;
-    adjustedValue = Integer.roundNumber(
+    adjustedValue = NumberType.round(
       adjustedValue,
-      Integer.RoundingMode.TRUNCATE,
+      Numerics.RoundingMode.TRUNCATE,
     );
-    return SafeInteger.clamp<DmsStringSecondFractionDigits>(
+    return SafeIntegerType.clamp<DmsStringSecondFractionDigits>(
       adjustedValue,
       0,
       6,
